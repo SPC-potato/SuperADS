@@ -1,0 +1,23 @@
+{
+  "name": "superads",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "webpack": "^3.5.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SPC-potato/SuperADS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SPC-potato/SuperADS/issues"
+  },
+  "homepage": "https://github.com/SPC-potato/SuperADS#readme"
+}
