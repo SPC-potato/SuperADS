@@ -1,23 +1,32 @@
 {
-  "name": "superads",
+  "name": "webpack-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
-  "dependencies": {
-    "webpack": "^3.5.5"
-  },
-  "devDependencies": {},
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cross-env NODE_ENV=production webpack -p",
+    "start": "webpack-dev-server --open"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SPC-potato/SuperADS.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SPC-potato/SuperADS/issues"
+  "dependencies": {
+    "boostrap": "^1.0.0",
+    "bootstrap": "^3.3.7",
+    "bootstrap-loader": "^2.2.0",
+    "lodash": "^4.17.4"
   },
-  "homepage": "https://github.com/SPC-potato/SuperADS#readme"
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-es2015": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
 }
