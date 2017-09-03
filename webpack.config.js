@@ -8,7 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-    entry:'./src/index.js',
+    entry:'./src/js/index.js',
     output:{
         filename:'bundle.js',
         path: path.resolve(__dirname,'dist')
@@ -19,12 +19,7 @@ module.exports = {
                 test:/\.js$/,
                 use:[
                     'babel-loader'
-                ]/*,
-                option:{
-                    presets:[
-                        'es2015'
-                    ]
-                }*/
+                ]
             },
             {
                 test:/\.css$/,
