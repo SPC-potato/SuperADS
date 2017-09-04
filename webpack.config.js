@@ -47,6 +47,12 @@ module.exports = {
                 use: [
                     'file-loader'
                 ]
+            },
+            {
+                test:/\.html$/,
+                use:[
+                    'html-withimg-loader'
+                ]
             }
         ]
     },
