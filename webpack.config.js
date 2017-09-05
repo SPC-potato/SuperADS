@@ -8,9 +8,12 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-    entry:'./src/js/index.js',
+    entry:{
+        index:'./src/js/index.js',
+        test:'./src/js/test.js'
+    },
     output:{
-        filename:'bundle.js',
+        filename:'js/[name].bundle.js',
         path: path.resolve(__dirname,'dist')
     },
     module:{
@@ -57,16 +60,32 @@ module.exports = {
         ]
     },
     plugins:[
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template:'./src/html/index.html'
-        }),
+        new HtmlWebpackPlugin(
+            {
+                filename: 'index.html',
+                template:'./src/html/index.html',
+                chunks:['index']
+
+            }
+        ),
+        new HtmlWebpackPlugin(
+            {
+                filename: 'test.html',
+                template:'./src/html/test.html',
+                chunks:['test']
+            }
+        ),
         new CleanWebpackPlugin([
             'dist'
         ]),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin()
     ],
+    resolve: {
+        alias: {
+            jquery:'jquery/dist/jquery.min.js'
+        }
+    },
     devtool: 'inline-source-map',
     devServer: {
         contentBase: path.resolve(__dirname, 'dist')
