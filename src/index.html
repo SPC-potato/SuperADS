@@ -3,13 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>SuperADS</title>
-    <link rel="stylesheet" href="../lib/css/jquery.fullpage.css">
-    <script src="../lib/js/jquery.min.js"></script>
-<!--
-    <script src="../lib/js/jquery.easings.min.js"></script>
-    <script src="../lib/js/jquery.slimscroll.min.js"></script>
-    <script src="../lib/js/jquery.fullpage.js"></script>
--->
+
+
+    <link rel="stylesheet" href="lib/css/slick.css">
+    <link rel="stylesheet" href="lib/css/slick-theme.css">
+    <style>
+        .slick-slide img{
+            display: inline;
+        }
+        .slick-prev, .slick-next{
+            display: none;
+        }
+    </style>
+
+
+    <!-- <link rel="stylesheet" href="css/jquery.fullpage.css">
+     <script src="js/jquery.min.js"></script>
+     <script src="js/jquery.easings.min.js"></script>
+     <script src="js/jquery.slimscroll.min.js"></script>
+     <script src="js/jquery.fullpage.js"></script>-->
+
+
 
 </head>
 <body>
@@ -17,7 +31,7 @@
         <section class="section bg-img">
             <div class="header container">
                 <div class="logo pull-left">
-                    <img src="../img/SuperADS.png" height="38" width="234" alt="线条科技LOGO"/>
+                    <img src="img/SuperADS.png" height="38" width="234" alt="线条科技LOGO"/>
                 </div>
                 <ul class="nav nav-tabs pull-right">
                     <li role="presentation" class="active"><a href="#">Advertisers</a></li>
@@ -30,15 +44,15 @@
             <div class="banner container">
 
                 <div class="introducr col-md-5 col-md-offset-1">
-                    <h3>Welcome to SuperADS</h3>
+                    <h2>Welcome to SuperADS</h2>
                     <p>The 1st party data platform that unlocks the value of your customers by turning data into insights and insights into action.</p>
                     <button class="btn-sign-up">Sign up</button>
                 </div>
                 <div class="banner-img col-md-5">
-                    <img src="../img/banner.png" class="img-responsive"/>
+                    <img src="img/banner.png" class="img-responsive"/>
                 </div>
             </div>
-            <img src="../img/hero-graph.png" class="bg-img-decorate"/>
+            <img src="img/hero-graph.png" class="bg-img-decorate"/>
         </section>
         <section class="section">
             <div class="container about-us">
@@ -46,14 +60,14 @@
                 <div class="row">
                     <div class="col-md-4">
                         <p class="text-center about-card">
-                            <img src="../img/about-2.png"  class="about-img"/><br/>
+                            <img src="img/about-1.png" class="about-img"/><br/>
                             SuperADS offers a variety of performance-based marketing solutions.
                         </p>
                     </div>
                     <div class="col-md-4">
 
                         <p class="text-center about-card">
-                            <img src="../img/about-2.png"  class="about-img"/><br/>
+                            <img src="img/about-2.png" class="about-img"/><br/>
                             Our direct and exclusive ad inventory reaches hundreds of millions of mobile users in a controlled, brand-safe environment.
 
                         </p>
@@ -61,7 +75,7 @@
                     <div class="col-md-4">
 
                         <p class="text-center about-card">
-                            <img src="../img/about-3.png"  class="about-img"/><br/>
+                            <img src="img/about-3.png" class="about-img"/><br/>
                             We guarantee satisfying results to many clients by delivering outstanding performance, with expert insights, full transparency and well control.
                         </p>
                     </div>
@@ -73,34 +87,34 @@
                 <h3 class="text-center">FORMAT<br/><small>Our direct and exclusive ad inventory reaches hundreds of millions of mobile users in a controlled, brand-safe environment.</small></h3>
 
                 <p class="text-center">
-                    <img src="../img/data-powered-innovation.png"/>
+                    <img src="img/data-powered-innovation.png"/>
                 </p>
 
             </div>
         </section>
         <section class="section">
-            <div class="container our-stats">
+            <div class="container our-stats" id="our-stats">
                 <h3 class="text-center">OUR STATS<br/><small>Our direct and exclusive ad inventory reaches hundreds of millions of mobile users in a controlled, brand-safe environment.</small></h3>
 
                 <div class="row">
                     <div class="col-md-4">
                         <p class="text-center stats-card">
-                            <img src="../img/icon-ACTIVE.png"  class="stats-img"/><br/>
-                            <span class="stats-data">280,618,888</span><br/>
+                            <img src="img/icon-ACTIVE.png" class="stats-img"/><br/>
+                            <span class="stats-data" id="magic-num1">280,618,888</span><br/>
                             <span class="stats-msg">DAILY IMPRESSIONS</span>
                         </p>
                     </div>
                     <div class="col-md-4">
                         <p class="text-center stats-card">
-                            <img src="../img/icon-CAMPAIGNS.png"  class="stats-img"/><br/>
-                            <span class="stats-data">228</span><br/>
+                            <img src="img/icon-CAMPAIGNS.png" class="stats-img"/><br/>
+                            <span class="stats-data" id="magic-num2">288</span><br/>
                             <span class="stats-msg">ACTIVE GEOS</span>
                         </p>
                     </div>
                     <div class="col-md-4">
                         <p class="text-center stats-card">
-                            <img src="../img/icon-DAILY.png"  class="stats-img"/><br/>
-                            <span class="stats-data">3,000</span><br/>
+                            <img src="img/icon-DAILY.png" class="stats-img"/><br/>
+                            <span class="stats-data" id="magic-num3">3000</span><br/>
                             <span class="stats-msg">LIVE CAMPAIGNS</span>
                         </p>
                     </div>
@@ -110,35 +124,46 @@
         <section class="section bg-img">
             <div class="container companion">
                 <h3 class="text-center">COMPANION<br/><small>Our direct and exclusive ad inventory reaches hundreds of millions of mobile users in a controlled, brand-safe environment.</small></h3>
-                <div class="row">
-                    <div class="col-md-4">
+                <div class="row"  id="roll-stats">
+
+                    <div class="">
                         <p class="text-center">
-                            <img src="../img/logo-c2s.png"/>
+                            <img src="img/logo-c2s.png"/>
                         </p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="">
                         <p class="text-center">
-                            <img src="../img/logo-igaworks.png"/>
+                            <img src="img/logo-igaworks.png"/>
                         </p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="">
                         <p class="text-center">
-                            <img src="../img/logo-Kochava.png"/>
+                            <img src="img/logo-Kochava.png"/>
                         </p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="">
                         <p class="text-center">
-                            <img src="../img/logo-TD.png"/>
+                            <img src="img/logo-TD.png"/>
                         </p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="">
                         <p class="text-center">
-                            <img src="../img/logo-tune.png"/>
+                            <img src="img/logo-tune.png"/>
                         </p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="">
                         <p class="text-center">
-                            <img src="../img/logo-uc.png"/>
+                            <img src="img/logo-uc.png"/>
+                        </p>
+                    </div>
+                    <div class="">
+                        <p class="text-center">
+                            <img src="img/logo-AliExpress.png"/>
+                        </p>
+                    </div>
+                    <div class="">
+                        <p class="text-center">
+                            <img src="img/logo-appsflyer.png"/>
                         </p>
                     </div>
                 </div>
@@ -149,7 +174,7 @@
                 <h3 class="text-center">OTHER<br/><small>Our direct and exclusive ad inventory reaches hundreds of millions of mobile users in a controlled, brand-safe environment.</small></h3>
 
                 <p class="text-center">
-                    <img src="../img/1st_party_marketplace.png" height="508" width="542"/>
+                    <img src="img/1st_party_marketplace.png" height="508" width="542"/>
                 </p>
             </div>
         </section>
@@ -172,7 +197,7 @@
                 </div>
                 <div class="footer  row">
                     <div class="col-md-4">
-                        <img src="../img/SuperADS.png"/>
+                        <img src="img/SuperADS.png"/>
                     </div>
                     <div class="col-md-2">
                         <h5>business</h5>
@@ -210,6 +235,19 @@
         </section>
     </div>
 
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/jquery-migrate.min.js"></script>
+    <script src="lib/js/slick.min.js"></script>
+    <script>
+        $('#roll-stats').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows:false,
+            autoplay:true,
+            autoplaySpeed:1000
+        });
 
+
+    </script>
 </body>
 </html>

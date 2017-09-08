@@ -5,6 +5,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -42,13 +43,13 @@ module.exports = {
             {
                 test:/\.(png|svg|jpg|gif)$/,
                 use:[
-                    'file-loader'
+                    'file-loader?name=images/[name].[ext]'
                 ]
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: [
-                    'file-loader'
+                    'file-loader?name=font/[name].[ext]'
                 ]
             },
             {
@@ -60,10 +61,19 @@ module.exports = {
         ]
     },
     plugins:[
+        new CopyWebpackPlugin(
+            [
+                {
+                    from:__dirname + '/src/lib',
+                    to:__dirname + '/dist/lib',
+                    flatten:false
+                }
+            ]
+        ),
         new HtmlWebpackPlugin(
             {
                 filename: 'index.html',
-                template:'./src/html/index.html',
+                template:'./src/index.html',
                 chunks:['index']
 
             }
