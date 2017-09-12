@@ -1,7 +1,4 @@
-/**
- * Created by 舍予 on 2017/9/3.
- */
-import  'bootstrap/dist/css/bootstrap.css'
+//主页样式
 import '../css/styl/index.styl'
 
 //通用获取dom对象封装
@@ -103,4 +100,34 @@ function magicNum (startNum, endNum, obj){
         return startNum += 1;
     }
 }
+
+
+///插件JS
+
+$('#roll-stats').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows:false,
+    autoplay:true,
+    autoplaySpeed:1000
+});
+
+$('.btn-sign-up').on('click', function () {
+    layer.open({
+        type: 1,
+        area: ['600px', '500px'],
+        shadeClose: true, //点击遮罩关闭
+        title:'Sign Up',
+        content: $('.sign-layer')
+    });
+})
+$('.btn-login').on('click', function () {
+    layer.open({
+        type: 1,
+        area: ['600px', '360px'],
+        shadeClose: true, //点击遮罩关闭
+        title:'Login',
+        content: $('.login-layer')
+    });
+})
 

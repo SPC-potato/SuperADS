@@ -1,0 +1,108 @@
+//主页
+title SuperADS
+include ../public/head.jade
+    style
+        include ../lib/css/slick.css
+        include ../lib/css/slick-theme.css
+body
+    include ../public/header
+
+    //轮播图模块
+    section(class="banner container-fluid bg-img")
+        div.container
+            div(class="introducr col-md-5 col-md-offset-1")
+                h2 Welcome to SuperADS
+                p | the 1st party data platform that unlocks the value of your customers by turning data into insights and insights into action.
+                a(class="btn-sign-up" href="sign.html") Sign up
+            div(class="banner-img col-md-5")
+                img(src="img/banner.png" class="img-responsive")
+        img(src="img/hero-graph.png" class="bg-img-decorate")
+
+    //关于我们模块
+    section(class="section")
+        div(class="container about-us")
+            h3(class="text-center") ABOUT US<br/>
+                small Our direct and exclusive ad inventory reaches hundreds of millions of mobile users in a controlled, brand-safe environment.
+            div(class="row")
+                div(class="col-md-4")
+                    p(class="text-center about-card")
+                        img(src="img/about-1.png" class="about-img")
+                        content <br/> SuperADS offers a variety of performance-based marketing solutions.
+                div(class="col-md-4")
+                    p(class="text-center about-card")
+                        img(src="img/about-2.png" class="about-img")
+                        content <br/> SuperADS offers a variety of performance-based marketing solutions.
+                div(class="col-md-4")
+                    p(class="text-center about-card")
+                        img(src="img/about-3.png" class="about-img")
+                        content <br/> SuperADS offers a variety of performance-based marketing solutions.
+
+    //广告业务类型介绍
+    section(class="section bg-img")
+        div(class="container format")
+            h3(class="text-center") FORMAT <br/>
+                small Our direct and exclusive ad inventory reaches hundreds of millions of mobile users in a controlled, brand-safe environment.
+            p(class="text-center")
+                img(src="img/data-powered-innovation.png")
+
+    //数据统计
+    section(class="section")
+        div(class="container our-stats" id="our-stats")
+            h3(class="text-center") OUR STATS <br/>
+                small Our direct and exclusive ad inventory reaches hundreds of millions of mobile users in a controlled, brand-safe environment.
+            div(class="row")
+                div(class="col-md-4")
+                    p(class="text-center stats-card")
+                        img(src="img/icon-ACTIVE.png" class="stats-img")
+                        span(class="stats-data" id="magic-num1") <br/> 280,618,888 <br/>
+                        span(class="stats-msg") DAILY IMPRESSIONS
+                div(class="col-md-4")
+                    p(class="text-center stats-card")
+                        img(src="img/icon-ACTIVE.png" class="stats-img")
+                        span(class="stats-data" id="magic-num2") <br/> 288 <br/>
+                        span(class="stats-msg") ACTIVE GEOS
+                div(class="col-md-4")
+                    p(class="text-center stats-card")
+                        img(src="img/icon-ACTIVE.png" class="stats-img")
+                        span(class="stats-data" id="magic-num3") <br/> 3000 <br/>
+                        span(class="stats-msg") LIVE CAMPAIGNS
+
+    //合作伙伴
+    section(class="section bg-img")
+        div(class="container companion")
+            h3(class="text-center") COMPANION <br/>
+                small Our direct and exclusive ad inventory reaches hundreds of millions of mobile users in a controlled, brand-safe environment.
+            div(class="" id="roll-stats")
+                p(class="text-center")
+                    img(src="img/logo-c2s.png")
+                p(class="text-center")
+                    img(src="img/logo-c2s.png")
+                p(class="text-center")
+                    img(src="img/logo-c2s.png")
+                p(class="text-center")
+                    img(src="img/logo-c2s.png")
+                p(class="text-center")
+                    img(src="img/logo-c2s.png")
+
+    //其他介绍
+    section(class="section")
+        div(class="container other")
+            h3(class="text-center") OTHER <br/>
+                small Our direct and exclusive ad inventory reaches hundreds of millions of mobile users in a controlled, brand-safe environment.
+            p(class="text-center")
+                img(src="img/1st_party_marketplace.png" height="508" width="542")
+
+    include ../public/footer.jade
+    script
+        include ../lib/js/jquery.min.js
+        include ../lib/js/jquery-migrate.min.js
+        include ../lib/js/slick.min.js
+
+
+
+
+
+
+
+
+

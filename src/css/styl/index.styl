@@ -1,54 +1,13 @@
-a
-  color #fff
-
-.section
-  padding  80px 0
-  overflow hidden
-  h3
-    margin-bottom 80px
-.section:first-child
-  padding-top 30px
-
-.pull-bg
-  background-position-y 110px
-  background-repeat repeat-x
-
-
-
-//宽幅背景图
-.bg-img
-  background-image url('../../img/bg-img.png');
-  position relative
-  color #fff
-  .bg-img-decorate
-    position absolute
-    bottom 50px
-    z-index 1
-
-
-.header
-  border-bottom 1px solid rgba(194, 15, 42 ,.2);
-  .nav
-    padding-top 20px
-  .nav-tabs
-    border:none;
-    color:#fff;
-    li>a
-      border none
-    li.active>a
-      background-color: transparent;
-      border none
-      color rgba(194, 15, 42 ,1)
-    li>a:hover
-      background-color: transparent;
-      color rgba(194, 15, 42, 1)
-      border none
+//宽屏图片展示//
 .banner
   padding:50px 0;
   position relative
   z-index 999
 
-
+.bg-img-decorate
+  position absolute
+  bottom 50px
+  z-index -1
 
 .introducr
   color:white
@@ -56,7 +15,8 @@ a
   p
     text-indent 2em;
   .btn-sign-up
-    background-image: linear-gradient(to left, #eb3349 0%, #050100 50%, #eb3349 100%);
+    display inline-block
+    background-image: linear-gradient(to right bottom, #eb3349 0%, #050100 70%, #eb3349 100%);
     background-position: 0%;
     background-size: 200% 200%;
     border-radius: 50px;
@@ -67,10 +27,21 @@ a
     letter-spacing: 1.2px;
     line-height: 1;
     min-width: 180px;
-    padding: 20px 40px;
+    padding: 20px 60px;
     text-transform: uppercase;
     margin-top 20px
 
+//数据统计
+.our-stats
+  .stats-img
+    padding-bottom 30px
+  .stats-data
+    color red
+    font-size 26px
+  .stats-msg
+    font-size 18px
+
+//关于我们
 .about-us
   img
     padding-bottom 30px
@@ -81,60 +52,4 @@ a
     height:240px
     .about-img
       width 100px
-
-.our-stats
- .stats-img
-  padding-bottom 30px
- .stats-data
-    color red
-    font-size 26px
- .stats-msg
-    font-size 18px
-
-
-
-
-
-
-.companion
-  img
-    height 40px
-    margin-bottom 60px
-
-
-
-
-
-.footer
-  margin-top 260px
-  font-size 12px
-  h5
-    font bold 14px ''
-    color red
-  .icon
-    background-image url('../../img/shejiaologo.png')
-    height 80px
-    background-repeat no-repeat
-    background-position: -104px -127px;
-.contact-us
-  border-radius: 10px;
-  box-shadow: 0px 0px 11px -5px;
-  background-color #fff
-  position absolute
-  color #333
-  top 0px;
-  padding 30px 0 60px
-  margin-top 2px
-  h3
-    margin-bottom 40px
-  .form-groud
-    overflow hidden
-    height 50px
-    label,input
-      display inline-block
-    input
-      border none
-      border-bottom 1px solid #efefef
-
-
 

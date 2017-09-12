@@ -1,21 +1,78 @@
-/**
- * Created by 微软 on 2017/9/2.
- */
-
+//webpack配置文件
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
+    plugins:[
+        new UglifyJSPlugin(),
+        new CopyWebpackPlugin(
+            [
+                {
+                    from:__dirname + '/src/lib',
+                    to:__dirname + '/dist/lib',
+                    flatten:false
+                }
+            ]
+        ),
+        new CopyWebpackPlugin(
+            [
+                {
+                    from:__dirname + '/src/img',
+                    to:__dirname + '/dist/img',
+                    flatten:false
+                }
+            ]
+        ),
+        new HtmlWebpackPlugin(
+            {
+                filename: 'concact.html',
+                template:'./src/view/concact.jade',
+                chunks:['public']
+            }
+        ),
+        new HtmlWebpackPlugin(
+            {
+                filename: 'login.html',
+                template:'./src/view/login.jade',
+                chunks:['public']
+            }
+        ),
+        new HtmlWebpackPlugin(
+            {
+                filename: 'sign.html',
+                template:'./src/view/sign.jade',
+                chunks:['public']
+            }
+        ),
+        new HtmlWebpackPlugin(
+            {
+                filename: 'index.html',
+                template:'./src/view/home.jade',
+                chunks:['public','index']
+            }
+        ),
+        new CleanWebpackPlugin([
+            'dist'
+        ]),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin()
+    ],
     entry:{
-        index:'./src/js/index.js',
-        test:'./src/js/test.js'
+        public:'./src/js/public.js',
+        index:'./src/js/index.js'
     },
     output:{
-        filename:'js/[name].bundle.js',
+        filename:'js/[name].js',
         path: path.resolve(__dirname,'dist')
+    },
+    resolve: {
+        alias: {
+            jquery:'jquery/dist/jquery.min.js'
+        }
     },
     module:{
         rules:[
@@ -43,7 +100,7 @@ module.exports = {
             {
                 test:/\.(png|svg|jpg|gif)$/,
                 use:[
-                    'file-loader?name=images/[name].[ext]'
+                    'file-loader?name=img/[name].[ext]'
                 ]
             },
             {
@@ -53,48 +110,12 @@ module.exports = {
                 ]
             },
             {
-                test:/\.html$/,
+                test:/\.jade/,
                 use:[
-                    'html-withimg-loader'
+                    'jade-loader'
                 ]
             }
         ]
-    },
-    plugins:[
-        new CopyWebpackPlugin(
-            [
-                {
-                    from:__dirname + '/src/lib',
-                    to:__dirname + '/dist/lib',
-                    flatten:false
-                }
-            ]
-        ),
-        new HtmlWebpackPlugin(
-            {
-                filename: 'index.html',
-                template:'./src/index.html',
-                chunks:['index']
-
-            }
-        ),
-        new HtmlWebpackPlugin(
-            {
-                filename: 'test.html',
-                template:'./src/html/test.html',
-                chunks:['test']
-            }
-        ),
-        new CleanWebpackPlugin([
-            'dist'
-        ]),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin()
-    ],
-    resolve: {
-        alias: {
-            jquery:'jquery/dist/jquery.min.js'
-        }
     },
     devtool: 'inline-source-map',
     devServer: {
